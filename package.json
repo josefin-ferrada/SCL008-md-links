@@ -4,9 +4,10 @@
   "dependencies": {
     "jest": "^24.7.1",
     "markdown-link-extractor": "^1.2.0",
-
+    "url-status-code": "^1.1.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
-  	"test": "jest --coverage"
+    "test": "jest --coverage"
   }
 }

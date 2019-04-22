@@ -1,29 +1,35 @@
 const fs = require('fs');
-
+const fetch = require('node-fetch');
 var markdownLinkExtractor = require('markdown-link-extractor');
-
+const command = process.argv[2]
 
 var markdown = fs.readFileSync('./../README.md').toString();
-
 var links = markdownLinkExtractor(markdown);
-
 
 
 links.forEach(function (link) {
     console.log(link);
-   
-	
-	 
-/*	urlStatusCode(link, (error, statusCode) => {
-	  if (error) {
-	    console.error(error)
-	  } else {
-	    console.log(statusCode)
-	  }
-	})
-*/
+  
 
 });
+
+links.forEach(function (element) {
+    fetch(element).then((res)=>{
+        
+    console.log(res.url + " " + res.status + " " + res.statusText);
+    
+    })
+    .catch (error =>{
+        console.log(error.message)
+      
+    })
+
+});
+
+
+exports.links = links;
+
+
 
 
 
