@@ -9,9 +9,16 @@
 
 
 
-// const fs = require('fs');
-// const command = process.argv[2];
-// const path = require('path');
+const fs = require('fs');
+
+const mdLinks = require("./md-links");
+
+var markdownLinkExtractor = require("markdown-link-extractor");
+var markdown = fs.readFileSync(process.argv[2]).toString();
+var links = markdownLinkExtractor(markdown);
+
+
+
 
 
 // console.log(fs.existsSync(command));// verifica si la ruta existe
@@ -33,29 +40,60 @@
 
 // }
 
+let options = { validate : false , stat : true}
+
+for (let i = 0; i<process.argv.length; i++) {
+	
+
+	if(process.argv[i].includes("--validate")){
+		console.log("validate")
+		validate = true
+		Promise.all(links.map(singleElement => mdLinks.validatef(singleElement)))
+		.then(
+		  list => {
+		    //console.log("imprimiendo");
+
+		    console.log(list);
+		    //return list;
+		  })
+
+	}
+	if (process.argv[i].includes("--stat")){
+		
+		stat = true
+		Promise.all(links.map(singleElement => mdLinks.stat(singleElement)))
+		.then(
+		  list => {
+		    //console.log("imprimiendo");
+		    //console.log(list);
+		    //return list;
 
 
-// console.log(path.isAbsolute(command)); //verifica si es una ruta absoluta
-// console.log(path.extname(command));// obtiene la extension del archivo
+		    let stats = {total: 0, unique : 0};
+
+		    stats.total = list.length;
+
+		    var unique = [];
+
+		    list.forEach((element) => {
+		      if(!unique.includes(element.link)){
+		        unique.push(element.link);
+		      }
+
+		      })
+		    stats.unique = unique.length;
+		    console.log(stats)
+		    return stats;
+
+		})
+	}
+	
+}
 
 
 
 
 
-
-
- const mdLinks = require("./src/md-links");
-
-
-
- 
-
-
-// mdLinks(process.argv[2], options)
-//   .then(links => {
-//     // => [{ href, text, file }]
-//   })
-//   .catch(console.error);
 
 // mdLinks("./some/example.md", { validate: true })
 //   .then(links => {
@@ -68,3 +106,14 @@
 //     // => [{ href, text, file }]
 //   })
 //   .catch(console.error);
+
+
+
+
+
+
+
+
+
+// console.log(path.isAbsolute(command)); //verifica si es una ruta absoluta
+// console.log(path.extname(command));// obtiene la extension del archivo
