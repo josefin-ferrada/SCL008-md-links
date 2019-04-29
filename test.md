@@ -4,7 +4,7 @@
 
 ## 🚀 Planificación 
 
-La planificación comienza reconociendo en conjunto la API de [OMDB](http://www.omdbapi.com/), la que contiene infinita información de películas y series. 
+La planificación comienza reconociendo en conjunto la API de [OMDB](http://www.omdbapi.com/zxcsdfsd), la que contiene infinita información de películas y series. 
 
 El squad decidió trabajar en base a _historias de usuario_, complementadas con _dailys_ y _retrospectivas diarias_. 
 

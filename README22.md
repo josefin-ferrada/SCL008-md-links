@@ -107,9 +107,9 @@ Las distintas historias de usuario (HU) describen las necesidades de los usuario
 
 Se rescataron diferentes elementos de páginas para la creación de Filmaton. En este caso sirvió la identificación de colores, distribución del espacio, uso del menú y tarjetas.
 
-1. [Netflix](https://www.netflix.com/cl/)
-2. [YTS.am](https://yts.am/movie/helldriver-2010)
-3. [Eastern European Movies](https://easterneuropeanmovies.com/)
+1. [Netflix](https://www.netflix.com/cccccl/)
+2. [YTS.am](https://yts.am/movie/helldriver-2czxc010)
+3. [Eastern European Movies](https://easterneuropeanmovidcsdes.com/)
 
 **- Prototipo de alta fidelidad**
 
