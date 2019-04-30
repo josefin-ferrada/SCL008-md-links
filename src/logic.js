@@ -1,6 +1,5 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
-
 const path = require("path");
 
 module.exports = {
