@@ -33,7 +33,21 @@ Para utilizar este módulo programaticamente deberas importarlo en tu archivo .j
 
 El módulo ofrece la siguiente interfaz:
 
-[usoBasico](https://i.ibb.co/XsFmLR2/Modo-de-uso.jpg)
+![usoBasico](https://i.ibb.co/XsFmLR2/Modo-de-uso.jpg)
+
+la forma de ingresar la información es llamando al modulo jf-md-links luego ingresando el archivo a analizar 
+
+![pordefecto](https://i.ibb.co/J2XP6tG/Ejecuci-n-por-defecto-sin-opciones.jpg)
+
+La ejecución por defecto muestra información básica de los links extraidos como: ruta del archivo, href y titulo
+
+![stat](https://i.ibb.co/jHvD0Ph/Ejecutando-stat.jpg)
+
+Al ingresar --stat estadisticas generales con respecto a los links extraídos como total de links y unicos
+
+![validate](https://i.ibb.co/Rycchbd/Ejecutando-validate.jpg)
+
+Al ingresar --validate se visualiza la ruta, href, status Code, status Text, titulo del archivo
 
 
 
