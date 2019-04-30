@@ -1,4 +1,4 @@
-# md-Links
+# jf-md-Links
 
 ## Introduccion
 
@@ -32,6 +32,8 @@ Para utilizar este módulo programaticamente deberas importarlo en tu archivo .j
 `const mdLinks = require('./md-links')`
 
 El módulo ofrece la siguiente interfaz:
+
+[usoBasico](https://i.ibb.co/XsFmLR2/Modo-de-uso.jpg)
 
 
 
