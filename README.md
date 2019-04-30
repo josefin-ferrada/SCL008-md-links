@@ -33,45 +33,35 @@ Para utilizar este módulo programaticamente deberas importarlo en tu archivo .j
 
 El módulo ofrece la siguiente interfaz:
 
-![usoBasico](https://i.ibb.co/XsFmLR2/Modo-de-uso.jpg)
+![usoBasico](./archivosDePrueba/Modo_de_uso.JPG)
 
 la forma de ingresar la información es llamando al modulo jf-md-links luego ingresando el archivo a analizar 
 
-![pordefecto](https://i.ibb.co/J2XP6tG/Ejecuci-n-por-defecto-sin-opciones.jpg)
+![pordefecto](./archivosDePrueba/por_defecto.JPG)
 
 La ejecución por defecto muestra información básica de los links extraidos como: ruta del archivo, href y titulo
 
-![stat](https://i.ibb.co/jHvD0Ph/Ejecutando-stat.jpg)
+![stat](./archivosDePrueba/Ejecutando_stat.JPG)
 
 Al ingresar --stat estadisticas generales con respecto a los links extraídos como total de links y unicos
 
-![validate](https://i.ibb.co/Rycchbd/Ejecutando-validate.jpg)
+![validate](./archivosDePrueba/Ejecutando_validate.JPG)
 
 Al ingresar --validate se visualiza la ruta, href, status Code, status Text, titulo del archivo
 
+![validateystat](./archivosDePrueba/Ejecutando_validate_y_stat.JPG)
 
-
+Al ingresar ambas opciones se visualiza estadisticas generales con respecto a los links extraídos como total de links, unicos y rotos. 
 
 
 
 ## Proceso de planificación y construcción
 foto planificacion inicial
-foto gpuia en casa
+foto guia en casa
 
-Diseñar tu propia librería es una experiencia fundamental para cualquier
-desarrollador porque que te obliga a pensar en la interfaz (API) de tus
-_módulos_ y cómo será usado por otros developers. Debes tener especial
-consideración en peculiaridades del lenguaje, convenciones y buenas prácticas.
+![planificacioncasa](./archivosDePrueba/planificacion_casa.JPG)
 
-Tópicos: [Node.js](https://nodejs.org/en/),
-[módulos (CommonJS)](https://nodejs.org/docs/latest-v0.10.x/api/modules.html),
-[file system](https://nodejs.org/api/fs.html),
-[path](https://nodejs.org/api/path.html),
-[http.get](https://nodejs.org/api/http.html#http_http_get_options_callback),
-parsing,
-[markdown](https://daringfireball.net/projects/markdown/syntax), CLI,
-[npm-scripts](https://docs.npmjs.com/misc/scripts),
-[semver](https://semver.org/), ...
+
 
 
 ### Archivos del proyecto
@@ -80,23 +70,9 @@ parsing,
   documentación del API y ejemplos. Todo lo relevante para que cualquier
   developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
 - `index.js`: Desde este archivo debes exportar una función (`mdLinks`).
-- `package.json` con nombre, versión, descripción, autores, licencia,
-  dependencias, scripts (pretest, test, ...)
-- `.editorconfig` con configuración para editores de texto. Este archivo no se
-  debe cambiar.
-- `.eslintrc` con configuración para linter. Este archivo no
-  se debe cambiar.
-- `.gitignore` para ignorar `node_modules` u otras carpetas que no deban
-  incluirse en control de versiones (`git`).
-- `test/md-links.spec.js` debe contener los tests unitarios para la función
   `mdLinks()`. Tu inplementación debe pasar estos tets.
 
-### JavaScript API
 
-El módulo debe poder importarse en otros scripts de Node.js y debe ofrecer la
-siguiente interfaz:
-
-#### `mdLinks(path, options)`
 
 ##### Argumentos
 
