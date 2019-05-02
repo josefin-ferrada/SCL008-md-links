@@ -71,5 +71,6 @@ foto guia en casa
   developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
 - `index.js`: Desde este archivo debes exportar una función (`mdLinks`).
   `mdLinks()`. Tu inplementación debe pasar estos tets.
-- `md-links.js`:
-- `logic.js`:
+- `md-links.js`: Este archivo contiene la función a exportar mdlinks que recibe como parámetros el arreglo de links y las opciones ingresadas por el usuario. Esta función ejecuta acciones en base a los parámetros recibidos por la línea de comandos y retorna una promesa con los resultados de la ejecución.
+- `logic.js`: Contiene funciones que permiten obtener el estado de cada uno
+de los links y estadísticas de todos ellos.
