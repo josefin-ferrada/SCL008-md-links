@@ -56,8 +56,8 @@ Al ingresar ambas opciones se visualiza estadisticas generales con respecto a lo
 
 
 ## Proceso de planificación y construcción
-foto planificacion inicial
-foto guia en casa
+Comencé realizando la planificación en la sección Project de GitHub, sin embargo, me resultó difícil desglosar lo necesario en cada tarea, por esto, en mi hogar me guié con la estructura dada por la coach en clases. 
+
 
 ![planificacioncasa](./archivosDePrueba/planificacion_casa.jpeg)
 
