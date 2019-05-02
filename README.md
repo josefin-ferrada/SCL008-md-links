@@ -59,7 +59,7 @@ Al ingresar ambas opciones se visualiza estadisticas generales con respecto a lo
 foto planificacion inicial
 foto guia en casa
 
-![planificacioncasa](./archivosDePrueba/planificacion_casa.JPG)
+![planificacioncasa](./archivosDePrueba/planificacion_casa.jpeg)
 
 
 
