@@ -70,7 +70,7 @@ foto guia en casa
   documentación del API y ejemplos. Todo lo relevante para que cualquier
   developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
 - `index.js`: Desde este archivo debes exportar una función (`mdLinks`).
-  `mdLinks()`. Tu inplementación debe pasar estos tets.
+  `mdLinks()`. Tu implementación debe pasar estos tets.
 - `md-links.js`: Este archivo contiene la función a exportar mdlinks que recibe como parámetros el arreglo de links y las opciones ingresadas por el usuario. Esta función ejecuta acciones en base a los parámetros recibidos por la línea de comandos y retorna una promesa con los resultados de la ejecución.
-- `logic.js`: Contiene funciones que permiten obtener el estado de cada uno
-de los links y estadísticas de todos ellos.
+- `logic.js`: Contiene las funciones `optionValidate:` que permite obtener el estado de cada uno de los links. `optionStat: ` que permite obtener la cantidad de links únicos y totales. `optionStatAndValidate: ` que permite obtener la cantidad de links únicos, totales y rotos. Estas funciones son llamadas desde el archivo `md-links.js`.
+
