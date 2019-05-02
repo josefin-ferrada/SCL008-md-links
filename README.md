@@ -71,4 +71,5 @@ foto guia en casa
   developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
 - `index.js`: Desde este archivo debes exportar una función (`mdLinks`).
   `mdLinks()`. Tu inplementación debe pasar estos tets.
-
+- `md-links.js`:
+- `logic.js`:
