@@ -56,10 +56,10 @@ Al ingresar ambas opciones se visualiza estadisticas generales con respecto a lo
 
 
 ## Proceso de planificación y construcción
-foto planificacion inicial
-foto guia en casa
+Comencé realizando la planificación en la sección Project de GitHub, sin embargo, me resultó difícil desglosar lo necesario en cada tarea, por esto, en mi hogar me guié con la estructura dada por la coach en clases. 
 
-![planificacioncasa](./archivosDePrueba/planificacion_casa.JPG)
+
+![planificacioncasa](./archivosDePrueba/planificacion_casa.jpeg)
 
 
 
@@ -70,121 +70,6 @@ foto guia en casa
   documentación del API y ejemplos. Todo lo relevante para que cualquier
   developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
 - `index.js`: Desde este archivo debes exportar una función (`mdLinks`).
-  `mdLinks()`. Tu inplementación debe pasar estos tets.
-
-
-
-##### Argumentos
-
-- `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es
-  relativa, debe resolverse como relativa al directorio desde donde se invoca
-  node - _current working directory_).
-- `options`: Un objeto con las siguientes propiedades:
-  * `validate`: Booleano que determina si se desea validar los links
-    encontrados.
-
-```js
-const mdLinks = require("md-links");
-
-mdLinks("./some/example.md")
-  .then(links => {
-    // => [{ href, text, file }]
-  })
-  .catch(console.error);
-
-mdLinks("./some/example.md", { validate: true })
-  .then(links => {
-    // => [{ href, text, file, status, ok }]
-  })
-  .catch(console.error);
-
-mdLinks("./some/dir")
-  .then(links => {
-    // => [{ href, text, file }]
-  })
-  .catch(console.error);
-```
-
-### CLI (Command Line Interface - Interfaz de Línea de Comando)
-
-El ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente
-manera a través de la terminal:
-
-`md-links <path-to-file> [options]`
-
-Por ejemplo:
-
-```sh
-$ md-links ./some/example.md
-./some/example.md http://algo.com/2/3/ Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html algún doc
-./some/example.md http://google.com/ Google
-```
-
-El comportamiento por defecto no debe validar si las URLs responden ok o no,
-solo debe identificar el archivo markdown (a partir de la ruta que recibe como
-argumento), analizar el archivo Markdown e imprimir los links que vaya
-encontrando, junto con la ruta del archivo donde aparece y el texto
-que hay dentro del link (truncado a 50 caracteres).
-
-#### Options
-
-##### `--validate`
-
-Si pasamos la opción `--validate`, el módulo debe hacer una petición HTTP para
-averiguar si el link funciona o no. Si el link resulta en una redirección a una
-URL que responde ok, entonces consideraremos el link como ok.
-
-Por ejemplo:
-
-```sh
-$ md-links ./some/example.md --validate
-./some/example.md http://algo.com/2/3/ ok 200 Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html fail 404 algún doc
-./some/example.md http://google.com/ ok 301 Google
-```
-
-Vemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de
-la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
-URL.
-
-##### `--stats`
-
-Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
-básicas sobre los links.
-
-```sh
-$ md-links ./some/example.md --stats
-Total: 3
-Unique: 3
-```
-
-También podemos combinar `--stats` y `--validate` para obtener estadísticas que
-necesiten de los resultados de la validación.
-
-```sh
-$ md-links ./some/example.md --stats --validate
-Total: 3
-Unique: 3
-Broken: 1
-```
-
-## Entregables
-
-Módulo instalable via `npm install <github-user>/md-links`. Este módulo debe
-incluir tanto un ejecutable como una interfaz que podamos importar con `require`
-para usarlo programáticamente.
-
-
-### Tutoriales / NodeSchool workshoppers
-
-- [learnyounode](https://github.com/workshopper/learnyounode)
-- [how-to-npm](https://github.com/workshopper/how-to-npm)
-- [promise-it-wont-hurt](https://github.com/stevekane/promise-it-wont-hurt)
-
-
-
-### General
-
-- [ ] Puede instalarse via `npm install --global <github-user>/md-links`
-
+  `mdLinks()`. Tu implementación debe pasar estos tets.
+- `md-links.js`: Este archivo contiene la función a exportar mdlinks que recibe como parámetros el arreglo de links y las opciones ingresadas por el usuario. Esta función ejecuta acciones en base a los parámetros recibidos por la línea de comandos y retorna una promesa con los resultados de la ejecución.
+- `logic.js`: Contiene las funciones `optionValidate:` que permite obtener el estado de cada uno de los links. `optionStat: ` que permite obtener la cantidad de links únicos y totales. `optionStatAndValidate: ` que permite obtener la cantidad de links únicos, totales y rotos. Estas funciones son llamadas desde el archivo `md-links.js`.
