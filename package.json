@@ -5,6 +5,7 @@
     "md-links": "index.js"
   },
   "dependencies": {
+    "filehound": "^1.17.0",
     "jest": "^24.7.1",
     "markdown-link-extractor": "^1.2.0",
     "url-status-code": "^1.1.1",

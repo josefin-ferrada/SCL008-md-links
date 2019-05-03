@@ -6,14 +6,36 @@ const fs = require("fs");
 const mdLinks = require("./src/md-links"); 
 var markdownLinkExtractor = require("markdown-link-extractor"); 
 var path = require("path");
+const FileHound = require('filehound');
+
 
 
 // verifica si la ruta existe
 if(!fs.existsSync(process.argv[2])){
   console.log("la ruta no existe")
   
+}else if(fs.lstatSync(process.argv[2]).isDirectory()){
+ console.log("entrando a directorio")
+const files = FileHound.create()
+  .paths(process.argv[2])
+  .ext('md')
+  .find();
+ 
+  files
+  .then(res => {
+    let  ar = [];  
+    console.log(res)
+    res.forEach(element => {
+      let normalize = path.normalize(element);
+      ar.push(normalize)
+      console.log(normalize)
+    })
+
+    console.log(ar)
+  });
+
 }else if (path.extname(process.argv[2]) !== ".md"){
-  console.log("archivo con extension incorrecta, escpecifique archivo con extension .md")
+  console.log("archivo con extension incorrecta, especifique archivo con extension .md")
 
 }else{
   var markdown = fs.readFileSync(process.argv[2]).toString();// leyendo contenido en el archivo que pasamos por la linea de comando
