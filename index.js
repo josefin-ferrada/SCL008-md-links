@@ -23,16 +23,20 @@ const files = FileHound.create()
  
   files
   .then(res => {
-    let  ar = [];  
+    var  ar = []; 
     console.log(res)
     res.forEach(element => {
-      let normalize = path.normalize(element);
-      ar.push(normalize)
-      console.log(normalize)
-    })
+       
+      let normalize_path = element.replace(/\\/g, "/");
+      ar.push(normalize_path)
+           
 
-    console.log(ar)
+    })
+    console.log("ARR:", ar)
+
   });
+
+
 
 }else if (path.extname(process.argv[2]) !== ".md"){
   console.log("archivo con extension incorrecta, especifique archivo con extension .md")

@@ -1,5 +1,5 @@
 
-const mdLinks = require("./../md-links.js");
+const mdLinks = require("./../src/md-links.js");
 const logic = require("./../src/logic.js")
 
 const testArray = [ { link:
